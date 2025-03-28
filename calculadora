@@ -60,19 +60,27 @@ def exibir_titulo():
 
 exibir_titulo()
 
+
 def exibir_menu():
     print("=" * 55)
     opcoes = ["Somar", "Subtrair", "Multiplicar", "Dividir", "Bhaskara", "Raiz Quadrada", "Porcentagem",
-              "Regra de Três", "Regra de Três Composta", "Conjuntos", "Sistemas Lineares", "Proporção", "Potência","Sair"]
+              "Regra de Três", "Regra de Três Composta", "Conjuntos", "Sistemas Lineares", "Proporção", "Potência",
+              "Sair"]
+
+    largura = 55  
+
     for i, opcao in enumerate(opcoes, 1):
-        print(f'Para {opcao.lower()} digite: [{i}]')
+
+        texto_formatado = f'[{i}] {opcao}'
+        print(f'\033[1;30;47m{texto_formatado.center(largura)}\033[m')
+
     print("=" * 55)
 
 def main():
     while True:
         exibir_menu()
         try:
-            opcao = int(input('Digite sua opção: '))
+            opcao = int(input('\033[1;30;47m Digite sua opção: \033[m'))
             if opcao == 1:
                 n1 = float(input('Digite o primeiro número: '))
                 n2 = float(input('Digite o segundo número: '))
